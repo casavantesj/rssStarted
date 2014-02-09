@@ -34,7 +34,7 @@ public class XmlReader {
 	
 	public static void main(String[] args) {
 		XmlReader reader = new XmlReader();
-		reader.loadFile("/home/jennifer/workspace/RssStarted/src/test.xml");
+		reader.loadFile("/home/jennifer/git/rssStarted/RssStarted/src/test.xml");
 		Configuration configuration = reader.parse();
 		System.out.println(configuration);
 	}

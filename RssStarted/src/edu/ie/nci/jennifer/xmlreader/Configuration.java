@@ -19,7 +19,38 @@ public class Configuration {
 	private List<Path> path;
 	private List<String> owner;
 	private Client client;
-	
+
+	@Override
+	public String toString() {
+		return String
+				.format("Id: %s\nServer: %s\nurl: %s\nName: %s\nDescription: %s\nPath: %s\nOwner: %s\nClient: %s",
+						id, server, url, name, description, path, owner,
+						client);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Configuration && obj != null) {
+			Configuration that = (Configuration)obj;
+			if (!this.id.equalsIgnoreCase(that.id)) return false;
+			if (!this.description.equalsIgnoreCase(that.description)) return false;
+			if (!this.name.equalsIgnoreCase(that.name)) return false;
+			if (!this.client.equals(that.client)) return false;
+			if (this.path.size() != that.path.size()) return false;
+			if (!this.path.containsAll(that.path)) return false;
+			if (this.owner.size() != that.owner.size()) return false;
+			if (!this.owner.containsAll(that.owner)) return false;
+		} else {
+			return false;
+		}
+		return true;
+	}
+
+	@Override
+	public int hashCode() {
+		return 0;
+	}
+
 
 	public Client getClient() {
 		return client;
@@ -42,23 +73,6 @@ public class Configuration {
 		this.owner = owner;
 	}
 
-	@Override
-	public String toString() {
-		return String
-				.format("Id: %s\nServer: %s\nurl: %s\nName: %s\nDescription: %s\nPath: %s\nOwner: %s\nClient: %s",
-						id, server, url, name, description, path, owner,
-						client);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		return false;
-	}
-
-	@Override
-	public int hashCode() {
-		return 0;
-	}
 
 	public String getServer() {
 		return this.server;

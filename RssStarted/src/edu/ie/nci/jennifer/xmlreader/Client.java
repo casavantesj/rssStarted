@@ -12,16 +12,28 @@ public class Client {
 	}
 
 	public Client(String name, String address) {
-
 		this.name = name;
 		this.address = address;
-
 	}
+
 	@Override
 	public String toString() {
 		return String.format("\nname: %s, address: %s", name, address);
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Client) {
+			Client that = (Client)obj;
+			if (!this.name.equalsIgnoreCase(that.name)) return false;
+			if (!this.address.equalsIgnoreCase(that.address)) return false;
+			
+		} else {
+			return false;
+		}
+		return true;
+	}
+	
 	public String getName() {
 		return this.name;
 	}

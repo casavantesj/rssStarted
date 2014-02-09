@@ -22,8 +22,17 @@ public class Path {
 	
 	@Override
 	public boolean equals(Object obj) {
-		return false;
+		if (obj instanceof Path) {
+			Path that = (Path)obj;
+			if (!this.input.equalsIgnoreCase(that.input)) return false;
+			if (!this.output.equalsIgnoreCase(that.output)) return false;
+			
+		} else {
+			return false;
+		}
+		return true;
 	}
+	
 	
 	@Override
 	public int hashCode() {
