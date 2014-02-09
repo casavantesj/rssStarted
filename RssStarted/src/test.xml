@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<configuration id="1">
+  <server>alvaro</server>
+  <url>http://www.example.com</url>
+  <name>h21</name>
+  <description>problem 2.1</description>
+  <paths>
+	  <path>
+	    <input>/my/input/path</input>
+	    <output>/my/output/path</output>
+	  </path>
+	  <path>
+	    <input>/my/input/path</input>
+	    <output>/my/output/path</output>
+	  </path>
+	  <path>
+	    <input>/my/input/path</input>
+	    <output>/my/output/path</output>
+	  </path>
+	  <path>
+	    <input>/my/input/path</input>
+	    <output>/my/output/path</output>
+	  </path>
+  </paths>
+  <owners>
+  	<owner>john</owner>
+  	<owner>mary</owner>
+  	<owner>jennifer</owner>
+  </owners>
+  <client>
+    <name>alvaro</name>
+    <address>42 Clipper View</address>
+  </client>
+</configuration>
